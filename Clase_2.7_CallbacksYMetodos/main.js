@@ -206,16 +206,20 @@ const peliculas = [
 //every 
 // console.log(peliculas.every((peliculas) => peliculas.tags.includes('accion')))
 
+// map
+// console.log(peliculas.map((pelicula) => pelicula.title));
 
-//map 
-console.log(peliculas.map((pelicula) =>pelicula.title))
+// const imprimirPelis = () => {
+//   peliculas.map((pelicula) => {
+//     return `
+//         <h1>${pelicula.title}</h1>
+//         <p>${pelicula.tags}</p>
+//         <img src=${pelicula.img} />
+//         `;
+//   });
+// };
 
-const imprimirPelis = () =>{
-  peliculas.map((pelicula) =>{
-    return `
-     <h1> &{pelicula.title} </h1>
-     
-     `
+//  filter
+// console.log(peliculas.filter((pelicula) => pelicula.tags.includes('aventura')));
 
-  })
-}
+console.log(peliculas.filter((peliculas) => peliculas.img !== undefined));
