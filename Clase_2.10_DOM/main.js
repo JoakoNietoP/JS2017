@@ -53,3 +53,137 @@ const logo = document.getElementById("logo");
 // console.dir(logo)
 
 //ToDo Min 19:28
+
+//* getElementByClassName()
+
+//La funcion sirve para acceder desde JS a un elemento de la estructura HTML, utilizando su atributo class como identificacion. Esto devuelve un html collection, con el .innerHTML podemos pasarlo a solo texto
+//!Con el innerHtml nos devuelve el contenido del parrafo
+// const parrafos = document.getElementsByClassName('parrafo')
+// console.log(parrafos[0].innerHTML)
+
+//* getElementByTagName()
+
+//Sirve para acceder desde JS a un elemento de ls estructura HTML utilizando su nombre de etiqueta como identificacion (P/Ddiv/button)
+// Es la menos especifica de todas
+
+// const pTag = document.getElementsByTagName('p')
+// console.log(pTag)
+// console.log(pTag[0].innerHTML)
+
+//Para recorrerlo podemos usar un for
+
+// for (let i = 0; i < pTag.length; i++){
+//     console.log(pTag[i].innerHTML)
+// }
+
+//Y si queremos usar un forEach tenemos que convertir el HTMLCollection a un array, podemos hacerlo con un spread operator (...)
+
+// let pTagArr = [...pTag]
+// console.log(pTagArr)
+
+// pTagArr.forEach(item => {
+//     console.log(item.innerHTML)
+// })
+
+//* querySelector
+//Devuelve la primera coincidencia del elemento, sino encuentra ninguno devuelve null
+
+const header = document.querySelector(".header");
+//Para todo el codigo html:
+// console.log(header.innerHTML)
+//Para solo el texto html
+// console.log(header.textContent)
+// const p = document.querySelector('.parrafo')
+// console.log(header.innerHTML)
+// console.log(p)
+
+const p = document.querySelectorAll(".parrafo");
+//? Nos devuelve un nodelist
+// console.log(p);
+// p.forEach((item) => console.log(item));
+
+// console.log(p[0].innerHTML)
+
+//Agregamos texto dentro de un parrafo
+
+const addText = document.getElementById("agregar-texto");
+// console.log(addText)
+addText.innerHTML = "<b>Hola Estamos</b> agregando texto";
+//! con textContenct nos agregaga las etiquetas literal <b></b>, no las transforma en archivo
+
+//* FUNCIONALIDADES DEL BROWSER
+
+// ? setTimeout (function, miuliseconds)
+// Ejecuta una funcion despues de esperar un numero especifico de milisegundos
+
+// ? setInterval (function, miliseconds)
+// igual que setTimeout() pero repite la ejecucion de la funcion continuamente
+
+//* Set Time Out
+
+// setTimeout(() => {
+//     console.log('hola')
+// }, 2000)
+
+//* set Interval
+
+// const repetirCadaSegundo = () => {
+//   setInterval(mandarLog, 2000)
+// };
+// const mandarLog = () => {
+//     console.log('pasaron 2 segundos')
+// }
+
+// repetirCadaSegundo()
+
+//* Interface Location
+//Representa la unicacion (URL) del objeto al que está vinculado
+//La interface location no hereda ninguna propiedad, pero las implementa desde URLUtils
+
+//*Location
+
+// let url = document.createElement('a');
+
+// url.href = 'https://www.google.com'
+// console.log(url)
+
+//?Nos muestra el protocolo de la dirreccion
+// console.log(url.protocol)
+//?Nos muestra el host(nombre)
+// console.log(url.host)
+
+//Nos muestra la direccion de la web
+// console.log(window.location.href)
+
+// window.location = 'https://www.google.com'
+
+//! Browser III
+//* Network Information API
+//Es una tecnologia experimental que nos permite obtener informacion sobre la conexion de red del sistema.
+
+//Esto es util en situiaciones como cuando se decide la calidad de los recursos (imagen, audio, video) en funcion de la conexion de red
+
+//La informacion de la red esta disponible en la connection propiedad del navigation objeto //? (navigator.connection):
+
+//* 1. Creemos un elemento desde js
+//!Transformar los elementos traidos de html en variables de js ayuda a hacer un codigo mas limpio y dinamico ademas de poder reutilizarlo sin tener que llamarlo tanto.
+/*
+1. Traernos el contenedor( o donde querramois agregar la etiqueta) y guardarlo en una variable
+2. Crear el elementon en este caso un h2
+4. A ese eñe,emtp agregarle el contenido
+4. Agregarlo al div contenedor
+ */
+const contenedor = document.getElementById("contenedor");
+// console.log(contenedor)
+
+//* 2. Creamos el elemento
+
+const h2 = document.createElement("h2");
+
+//* 3. creamos el contenido para esta etiqueta
+
+h2.textContent = "Hola Abuela estoy escribiendo HTML desde JS, te extraño";
+
+//* 4. Tenemos que agregar este h2 en algun lado del html
+
+contenedor.appendChild(h2);
