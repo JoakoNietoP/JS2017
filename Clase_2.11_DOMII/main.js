@@ -1,3 +1,54 @@
+//Manipulacion del DOM Eventos
+//?ESCUCHADORES DE EVENTOS
+//!Eventos:
+
+//? Controlan Accionmes
+//? Definen Comportamientos
+//?Ejemplo: Click
+
+
+//!Funcionamiento
+//?Js asigna una funcion a cada evento
+//? Se les denomiuna "event Handlers"
+//?Los eventos se asocian a cada elemento que se quiera escuchar
+
+//* addEventListener (la que escucha)
+
+//! Sintaxis 
+//?Atributo en el elemento
+//? Seguido de la accion asociada al evento
+//? Podemos asignarlo desde JS
+//? Buscando al elemento y asignandoselo
+
+
+//* AddEventListener desde JS
+// 1.Llamar al elemento
+// 2. A ese elemento pasarler un escuchador de evento
+
+const h3Alert = document.getElementById('h3Alert')
+// console.log(h3Alert)
+// h3Alert.addEventListener('click', () => {
+//   alert ('Escuchando un evento click desde JS')
+// })
+
+
+//!Las funciones flechas tienen que declararse antes 
+const mostrarAlerta = () => {
+  alert('Escuchando un evento click desde JS, pero pasandole una funcion')
+}
+
+h3Alert.addEventListener('click' , mostrarAlerta)
+
+//!Las funciones delcaradas con function no se alteran el orden como con las var porque desde un incio se las lleva
+
+//?Hoisting? Globo que se llevaba la declaracion (function y var) al principio
+// function mostrarAlerta() {
+//   alert('Éscuchando con un function')
+// }
+
+
+
+// ToDo 25:00
 //Focus/Blur
 
 const inputBlur = documente.querySelector("#inputBlur");
